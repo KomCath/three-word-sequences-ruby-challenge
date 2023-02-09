@@ -2,7 +2,7 @@
 
 require 'pry'
 require './file_handler_service'
-require './word_sequence_constructor'
+require './word_sequence_builder'
 
 puts 'hello team!'
 
@@ -11,7 +11,7 @@ def finder_argument
 end
 
 def call_services
-  WordSequenceConstructor.new(string: finder_argument).call
+  WordSequenceBuilder.new(string: finder_argument).call
 end
 
 puts

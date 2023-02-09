@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Constructor that
-class WordSequenceConstructor
+class WordSequenceBuilder
   # attr_accessor :file
 
   def initialize(string:)
