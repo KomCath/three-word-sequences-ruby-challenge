@@ -30,4 +30,14 @@ File type must be .txt please.
 2- run `bundle exec rspec spec/file_handler_service_spec.rb`
 
 ## What you would do next, given more time (if anything)?
+
+- The program accepts a list of one or more file paths (e.g. ruby solution.rb texts/moby-dick.txt brothers-karamazov.txt ...).
+
+- The program also accepts input via stdin (e.g. `cat texts/*.txt | java solution.java`).
+
+- Contractions shouldn’t be changed into two words (eg. can't should not become can t)
+
+- Hyphens on line-endings can be treated as continuations OR punctuation.
+
+
 ## Are there bugs that you are aware of?
