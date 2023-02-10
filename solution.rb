@@ -11,13 +11,13 @@ def finder_argument
 end
 
 def call_services
-  WordSequenceBuilder.new(string: finder_argument).call
+  WordSequenceBuilder.new(text: finder_argument).build
 end
 
 puts
 
 begin
-  call_services
+  puts call_services
 rescue FileHandlerService::IncorrectFileTypeError => exception
   puts exception.to_s
 end

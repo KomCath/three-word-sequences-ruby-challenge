@@ -1,38 +1,41 @@
 # frozen_string_literal: true
 
-# Constructor that
+# Builder that counts and sorts
 class WordSequenceBuilder
   # attr_accessor :file
 
-  def initialize(string:)
-    @string = string
+  def initialize(text:)
+    @text = text
     @sequences = {}
+    @displayer = ''
   end
 
-  def call
+  def build
     sequence_builder(data_setup)
-    order_displayer
+    displayer_builder
   end
 
   private
 
   def data_setup
-    @string.gsub(/([^A-Za-z\s])/, ' ').downcase.split(' ')
+    @text.gsub(/([^A-Za-z\s])/, ' ').downcase.split(' ')
   end
 
   def sequence_builder(data)
-    data.each_cons(3).to_a.each do |sequence|
-      if @sequences.include?(sequence.join(' '))
-        @sequences[sequence.join(' ')] += 1
+    data.each_cons(3).each do |sequence|
+      built_sequence = sequence.join(' ')
+      if @sequences.key?(built_sequence)
+        @sequences[built_sequence] += 1
       else
-        @sequences[sequence.join(' ')] = 0
+        @sequences[built_sequence] = 0
       end
     end
   end
 
-  def order_displayer
-    @sequences.sort_by { |_k, v| v }.reverse.first(100).each do |key, value|
-      puts "#{key} - #{value}"
+  def displayer_builder
+    @sequences.sort_by { |_k, v| v }.reverse.first(5).each do |sequence, count|
+      @displayer += "#{sequence} - #{count}\n"
     end
+    @displayer
   end
 end

@@ -25,7 +25,7 @@ File type must be .txt please.
 ```
 
 ## How to run the tests
-1- run `bundle` - not sure if this is needed for rspec to work
+1- run `bundle install`
 
 2- run `bundle exec rspec spec/file_handler_service_spec.rb`
 
