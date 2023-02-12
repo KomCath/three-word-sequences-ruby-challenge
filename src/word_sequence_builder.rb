@@ -2,12 +2,11 @@
 
 # Builder that counts and sorts
 class WordSequenceBuilder
-  # attr_accessor :file
+  # attr_accessor :sequences
 
   def initialize(text:)
     @text = text
     @sequences = {}
-    @displayer = ''
   end
 
   def build
@@ -18,7 +17,7 @@ class WordSequenceBuilder
   private
 
   def data_setup
-    @text.gsub(/([^A-Za-z\s])/, ' ').downcase.split(' ')
+    @text.gsub(/([^A-Za-z\’\-\s])/, ' ').downcase.split(' ')
   end
 
   def sequence_builder(data)
@@ -27,15 +26,16 @@ class WordSequenceBuilder
       if @sequences.key?(built_sequence)
         @sequences[built_sequence] += 1
       else
-        @sequences[built_sequence] = 0
+        @sequences[built_sequence] = 1
       end
     end
   end
 
   def displayer_builder
-    @sequences.sort_by { |_k, v| v }.reverse.first(5).each do |sequence, count|
-      @displayer += "#{sequence} - #{count}\n"
+    displayer = ''
+    @sequences.sort_by { |_k, v| v }.reverse.first(100).each do |sequence, count|
+      displayer += "#{sequence} - #{count}\n"
     end
-    @displayer
+    displayer
   end
 end

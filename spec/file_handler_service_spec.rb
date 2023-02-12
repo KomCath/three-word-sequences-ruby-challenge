@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require './file_handler_service'
+require_relative '../src/file_handler_service'
 
 RSpec.describe FileHandlerService do
   subject(:service) { described_class.new(file: extension) }
   let(:extension) { 'banana.txt' }
 
   describe '.initialize' do
-    it 'requires a file' do
+    it 'requires a file argument' do
       expect { described_class.new }.to raise_error ArgumentError
     end
   end

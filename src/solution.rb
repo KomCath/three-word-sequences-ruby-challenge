@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
 require 'pry'
-require './file_handler_service'
-require './word_sequence_builder'
+
+# file reader service
+# require './src/file_handler_service'
+# require './src/word_sequence_builder'
+require_relative './file_handler_service'
+require_relative './word_sequence_builder'
 
 puts 'hello team!'
 

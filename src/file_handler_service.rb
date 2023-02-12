@@ -4,7 +4,7 @@
 class FileHandlerService
   class IncorrectFileTypeError < StandardError; end
 
-  # attr_accessor :file
+  # attr_reader :file
 
   def initialize(file:)
     @file = file
