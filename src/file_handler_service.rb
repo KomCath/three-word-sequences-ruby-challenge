@@ -4,8 +4,6 @@
 class FileHandlerService
   class IncorrectFileTypeError < StandardError; end
 
-  # attr_reader :file
-
   def initialize(file:)
     @file = file
   end
@@ -18,7 +16,7 @@ class FileHandlerService
   private
 
   def check_format
-    raise IncorrectFileTypeError, 'File type must be .txt please.' unless @file.end_with?('.txt')
+    raise IncorrectFileTypeError, 'File type must be .txt' unless @file.end_with?('.txt')
   end
 
   def read_file

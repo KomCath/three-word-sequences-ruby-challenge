@@ -1,31 +1,33 @@
 # frozen_string_literal: true
 
 require 'pry'
-
-# file reader service
-# require './src/file_handler_service'
-# require './src/word_sequence_builder'
 require_relative './file_handler_service'
 require_relative './word_sequence_builder'
 
-puts 'hello team!'
-
-def finder_argument
+def call_service
   FileHandlerService.new(file: ARGV[0]).call
 end
 
-def call_services
-  WordSequenceBuilder.new(text: finder_argument).build
+def call_builder
+  WordSequenceBuilder.new(text: call_service).build
 end
 
-puts
+def main
+  puts "Welcome to Cath's Code Challenge!"
 
-begin
-  puts call_services
-rescue FileHandlerService::IncorrectFileTypeError => exception
-  puts exception.to_s
+  puts
+
+  begin
+    return puts 'Ops file is missing' if ARGV[0].nil?
+
+    puts call_builder
+  rescue FileHandlerService::IncorrectFileTypeError => e
+    puts e.to_s
+  end
+
+  puts
+
+  puts 'Loaded'
 end
 
-puts
-
-puts 'Loaded'
+main

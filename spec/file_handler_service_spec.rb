@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'pry'
 require_relative '../src/file_handler_service'
 
 RSpec.describe FileHandlerService do
