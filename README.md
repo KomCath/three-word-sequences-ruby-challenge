@@ -40,7 +40,7 @@ Ops file is missing
 2- all tests should be green :)
 
 ## What you would do next, given more time (if anything)?
-- Refactor WordSequenceBuilder, with the purpose of
+- Refactor WordSequenceBuilder
 
 - The program accepts a list of one or more file paths (e.g. ruby solution.rb texts/moby-dick.txt brothers-karamazov.txt ...).
 
