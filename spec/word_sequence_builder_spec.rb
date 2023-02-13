@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# require 'pry'
+require 'pry'
 require_relative '../src/word_sequence_builder'
 
 RSpec.describe WordSequenceBuilder do

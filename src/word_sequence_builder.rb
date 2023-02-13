@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-# Builder that counts and sorts
+# Builder that counts, sorts and displays the words sequences
 class WordSequenceBuilder
-  # attr_accessor :sequences
-
   def initialize(text:)
     @text = text
     @sequences = {}
