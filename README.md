@@ -14,7 +14,7 @@
 
 2- if you want to use your own file you need to provide the full path, eg. `ruby src/solution.rb /Users/catharinakomrij/Desktop/from_desktop.txt`
 
-3- run `ruby src/solution.rb texts/moby_dick.txt`
+3- run `ruby src/solution.rb texts/moby-dick.txt`
   top 3 from the output should be something like:
 
 ```
@@ -22,7 +22,7 @@ the sperm whale - 87
 the white whale - 79
 of the whale - 76
 ```
-4- run `ruby src/solution.rb texts/moby_dick`
+4- run `ruby src/solution.rb texts/moby-dick`
 
 ```
 File type must be .txt
